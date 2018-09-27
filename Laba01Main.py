@@ -1,15 +1,12 @@
 from tkinter import *
-
-#var
+#variables
 root = Tk()
 root.title("Symbol Finder")
 root.wm_attributes("-topmost", True)
-root.geometry('525x180')
+root.geometry('525x190')
 root.resizable(width=False, height=False)
 img1 = PhotoImage(file='roof.gif')
-space= Label(root, text="")
-
-#countchar
+#count process
 def count():
     if (line.get()=="") or (char.get()=="") :
         labelres.config(text="X")
@@ -21,18 +18,14 @@ def count():
         result=line.get().count(char.get())
         labelres.config(text=result)
         restext.config(text= "'"+char.get()+"' symbols\n in line")
-#clearline
+#clear line
 def clear():
         line.delete(0, 'end')
         char.delete(0, 'end')
         line.focus_set()
-
-#imgup
-lmageup = Label(root,
-                image=img1)
+#image up
+lmageup = Label(root,image=img1)
 lmageup.pack()
-space.pack()
-
 #line label
 label1= Label(root,
               text="Enter line:",
@@ -41,14 +34,11 @@ label1= Label(root,
               compound=LEFT,
               )
 label1.place(x=20, y=20)
-
 #line enter
-line = Entry(root,
-             width=80)
+line = Entry(root,width=80)
 line.place(x=20, y=45)
 line.focus_set()
-
-#char label
+#symbol label
 label2= Label(root,
               text="Enter symbol:",
               font="Verdana 10 bold",
@@ -56,12 +46,10 @@ label2= Label(root,
               compound=LEFT
               )
 label2.place(x=20, y=70)
-#char enter
-char = Entry(root,
-             width=5)
+#symbol enter
+char = Entry(root,width=5)
 char.place(x=20, y=95)
-
-#butt action
+#butt count
 actionbut = Button(root,
            text = "Count",
            width = 10,
@@ -69,7 +57,6 @@ actionbut = Button(root,
            foreground="#ccc",
            command = count)
 actionbut.place(x=20, y=130)
-
 #butt clear
 clearbut = Button(root,
            text = "Clear",
@@ -78,7 +65,6 @@ clearbut = Button(root,
            foreground="#ccc",
            command = clear)
 clearbut.place(x=130, y=130)
-
 #result label
 labelres= Label(root,
               text="☺",
@@ -94,10 +80,7 @@ restext= Label(root,
                justify=LEFT
               )
 restext.place(x=400, y=105)
-
-#imgdown
-lmagedn = Label(root,
-                image=img1)
-
+#image down
+lmagedn = Label(root,image=img1)
+lmagedn.place(x=0, y=170)
 mainloop()
-
