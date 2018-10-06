@@ -1,3 +1,4 @@
+## -*- coding: utf-8 -*-
 from tkinter import *
 #variables
 root = Tk()
@@ -6,23 +7,26 @@ root.wm_attributes("-topmost", True)
 root.geometry('525x190')
 root.resizable(width=False, height=False)
 img1 = PhotoImage(file='roof.gif')
+errordata="Please enter\n correct data!"
+errorone="Please enter\n ONE symbol!"
+
 #count process
 def count():
     if (line.get()=="") or (char.get()=="") :
         labelres.config(text="X")
-        restext.config(text="Please enter\n correct data!")
+        restext.config(text=errordata)
     elif len(char.get())>1:
         labelres.config(text="X")
-        restext.config(text="Please enter\n ONE symbol!")
+        restext.config(text=errorone)
     else:
         result=line.get().count(char.get())
         labelres.config(text=result)
         restext.config(text= "'"+char.get()+"' symbols\n in line")
 #clear line
 def clear():
-        line.delete(0, 'end')
-        char.delete(0, 'end')
-        line.focus_set()
+    line.delete(0, 'end')
+    char.delete(0, 'end')
+    line.focus_set()
 #image up
 lmageup = Label(root,image=img1)
 lmageup.pack()
@@ -83,4 +87,5 @@ restext.place(x=400, y=105)
 #image down
 lmagedn = Label(root,image=img1)
 lmagedn.place(x=0, y=170)
-mainloop()
+
+#mainloop()
