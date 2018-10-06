@@ -25,7 +25,7 @@ class Test01(unittest.TestCase):
         self.assertEqual(Laba01Main.restext.cget("text"), errordata)
         print("---TEST 3")
     def test_char(self):
-        Laba01Main.char.insert(0, "kekcheburek")
+        Laba01Main.char.insert(0, "kekchgeburek")
         Laba01Main.count()
         self.assertEqual(Laba01Main.restext.cget("text"), errordata)
         print("---TEST 4")
