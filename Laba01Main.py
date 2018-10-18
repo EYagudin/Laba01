@@ -9,7 +9,6 @@ root.resizable(width=False, height=False)
 img1 = PhotoImage(file='roof.gif')
 errordata="Please enter\n correct data!"
 errorone="Please enter\n ONE symbol!"
-
 #count process
 def count():
     if (line.get()=="") or (char.get()=="") :
@@ -87,5 +86,3 @@ restext.place(x=400, y=105)
 #image down
 lmagedn = Label(root,image=img1)
 lmagedn.place(x=0, y=170)
-
-#mainloop()
